@@ -26,14 +26,14 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/log.css">
     <link rel="stylesheet" href="css/logarea.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/stylefot.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="JPG/orang.png">
-    <title>Go bloG</title>
+    <title>Distro IT</title>
     <script src="JS/all.js"></script>
     
   

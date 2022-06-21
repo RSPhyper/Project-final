@@ -1,0 +1,76 @@
+.footer{
+    width: 100%;
+    height: 17vh;
+    backdrop-filter: blur(3px);
+    overflow: hidden;
+    position: absolute;
+    bottom: 0px;
+    box-shadow: 0px -5px 20px 5px rgba(0, 0, 0, 0.5) ;
+
+}
+.contack{
+    width: 200px;
+    height: 150px;
+
+    margin: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    padding: 10px;
+}
+.contack h1{
+    text-align: center;
+    border-bottom: 2px solid white;
+}
+.contack ul{
+    margin-top:5px ;
+}
+.contack ul li{
+    list-style: none;
+    padding: 5px;
+    font-size: 18px;
+}
+.contack ul li a{
+    color: white;
+    text-decoration: none;
+    display: flex;
+}
+.contack ul li a div{
+    margin-right: 10px;
+}
+.ig{
+    border-radius: 10%;
+    padding: 3px;
+    padding-bottom: 0.1px;
+    background-color: rgb(28, 27, 25);
+    background: radial-gradient(circle at 30% 107%,  #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); /*gradasi warna instagram referensi https://codepen.io/thomasrye/pen/VaRoYv */
+    -webkit-border-radius: 10%;
+    -moz-border-radius: 10%;
+    -ms-border-radius: 10%;
+    -o-border-radius: 10%;
+}
+
+.fb{
+    border-radius: 10%;
+    padding: 3px;
+    padding-right: 5.5px;
+    padding-left: 5.5px;
+    padding-bottom: 0.1px;
+    background-color: #4267B2;
+}
+.copyright{
+    color: rgb(203, 203, 203);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+    bottom: 4px;
+}
