@@ -1,0 +1,48 @@
+body{
+    background-image: url('../../img/backround.jpg'); 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin-top: 7cm;
+    cursor: default;
+    background-position: 50%;
+    text-align: center;
+}
+
+/* pengaturan div pada halaman registrasi */
+
+div{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    backdrop-filter: blur(3.5px);
+    width: 400px;
+    height: 450px;
+    background-color: transparent;
+    backdrop-filter: blur(4px);
+    margin: auto;
+    padding-top: 23px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.8);
+}
+div p{
+    color: #fff;
+}
+div p>a{
+    color: #fff;
+}
+.show-pass{
+    position: absolute;
+    right: 50px;
+    bottom: 184px;
+    cursor: pointer;
+    color: #fff;
+}
+.show-pass2{
+    position: absolute;
+    right: 50px;
+    bottom: 145px;
+    cursor: pointer;
+    color: #fff;
+}

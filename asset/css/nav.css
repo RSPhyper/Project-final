@@ -64,14 +64,17 @@
     -o-transform: translate(-50%);
 }
 .nama-brand{
-    margin: 10px;
+    margin: 16px;
 }
 .nama-brand h1{
     font-family: 'Fredoka One', cursive;
     letter-spacing: 2.5px;
     color: white;
 }
-.nama-brand h1 a{
+.brand h1{
+    font-family: 'Fredoka One', cursive;
+    letter-spacing: 2.5px;
     color: white;
-    text-decoration: none;
+    margin-top: 40px;
+    margin-right: 41cm;
 }

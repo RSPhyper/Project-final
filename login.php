@@ -1,6 +1,6 @@
 <?php
 
-    require 'functions.php';
+    require 'function.php';
 
     if (isset($_POST["login"])) {
 
@@ -25,16 +25,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/log.css">
-    <link rel="stylesheet" href="css/logarea.css">
-    <link rel="stylesheet" href="css/stylefot.css">
+    <link rel="stylesheet" href="asset/css/log.css">
+    <link rel="stylesheet" href="asset/css/nav.css">
+    <link rel="stylesheet" href="asset/css/area.css">
+    <link rel="stylesheet" href="asset/css/stylefot.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="JPG/orang.png">
+    <link rel="icon" href="img/distro.png">
     <title>Distro IT</title>
-    <script src="JS/all.js"></script>
+    <script src="asset/js/popup.js"></script>
     
   
 
@@ -44,18 +44,23 @@
 
     <div class="nav">
         <div class="nama-brand">
-            <h1><img src="JPG/logo.png" alt=""  width="200px"><a href=""></a></h1>
+            <h1>
+                <img src="img/distro.png" alt=""  width="200px">
+            </h1>
+        </div>
+        <div class="brand">
+            <h1>
+            <a>Log in</a>
+            </h1>
         </div>
         <div class="but-sign-in">
-            <button class="guest-account"><a href="guest.php">Guest</a></button>
             <button class="but-login" onclick="openForm()" >Login</button>
         </div>
     </div>
     <div class="body">
         <div class="kata">
-            <h1>Go bloG</h1>
-            <p>Go blog membantu anda terhubung dan berbagi kebahagiaan dengan orang-orang dalam kehidupan Anda <br>
-            <br>Klik Guest untuk lanjut ke halaman utama</p>
+            <h1>Selamat Datang di Distro IT</h1>
+            <br>Klik Login untuk lanjut ke halaman utama</p>
         </div>
         <div class="logarea" id="pop-up-form">
             <button class="logclose" onclick="closeForm()" >
@@ -90,7 +95,7 @@
 
                        <tr>
                            <td>
-                                <p class="cookis">jika belum mempunyai akun Go bloG,</br> silahkan registrasi</p></br>
+                                <p class="cookis">Baru di DistroIT?, silahkan registrasi</p></br>
                            </td>
                        </tr>
                             
@@ -116,11 +121,11 @@
     </div>
     <div class="footer">
         <div class="contack">
-            <h1>MyContact</h1>
+            <h1>Contact</h1>
      
             <ul>
-                <li><a href="https://www.instagram.com/restuphoenam/" target="ig"><div class="ig"><i class="fab fa-instagram"></i></div>  Restu.phoenam017 </a></li>
-                <li><a href="https://mobile.facebook.com/Restu.phoenam017/" target="fb"><div class="fb"><i class="fab fa-facebook-f"> </i></div> Restu.phoenam017 </a></li>
+                <li><a href="https://www.instagram.com/" target="ig"><div class="ig"><i class="fab fa-instagram"></i></div>  DistroIT </a></li>
+                <li><a href="https://mobile.facebook.com/" target="fb"><div class="fb"><i class="fab fa-facebook-f"> </i></div> DistroIT </a></li>
             </ul>
         </div>
         <div class="copyright">

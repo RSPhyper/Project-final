@@ -7,13 +7,13 @@
 body{
     font-family: sans-serif;
    
-    color: aliceblue;
-    background-image: url('../JPG/backyel.jpg'); /* source img -> https://www.freepik.com/free-vector/night-ocean-landscape-full-moon-stars-shine_17740155.htm#query=wallpaper%20dekstop&position=6&from_view=search */
+    color: rgb(0, 0, 0);
+    background-image: url('../../img/backround.jpg'); /* source img -> https://www.freepik.com/free-vector/night-ocean-landscape-full-moon-stars-shine_17740155.htm#query=wallpaper%20dekstop&position=6&from_view=search */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     cursor: default;
-}
+} 
 .body .kata{
     width: 800px;
     height: 300px;
