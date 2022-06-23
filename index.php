@@ -1,3 +1,7 @@
+<?php
+  require 'function.php';
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -82,42 +86,28 @@
   <!-- content -->
   <main>
   <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+  <?php
+    $sql = mysqli_query($conn, "SELECT * FROM barang ORDER BY br_id DESC limit 9");
+    while($data = mysqli_fetch_array($sql)){
+  ?>
   <div class="col">
         <div class="card mb-8 rounded-6 shadow-sm">
           <div class="card-header py-3">
-            <h4 class="my-0 fw-normal">Pro</h4>
+            <h4 class="my-0 fw-normal"><?php echo $data['br_nm']; ?></h4>
           </div>
           <div class="card-body">
-            <h1 class="card-title pricing-card-title">$15<small class="text-muted fw-light">/mo</small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>20 users included</li>
-              <li>10 GB of storage</li>
-              <li>Priority email support</li>
-              <li>Help center access</li>
-            </ul>
-            <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
+            <img src="<?php echo $data['br_gbr']; ?>" alt="">
+          <h1 class="card-title pricing-card-title"><?php echo number_format($data['br_hrg'],2,",",".");?><small class="text-muted fw-light"></small></h1>
+            <div>
+              <a href="detailproduk.php?kd=<?php echo $data['br_id'];?>" class="btn btn-lg btn-danger">Detail</a> 
+              <a href="detailproduk.php?kd=<?php echo $data['br_id'];?>" class="btn btn-lg btn-success">Beli &raquo;</a>
+            </div>
           </div>
         </div>
     </div>
-
-    <div class="col">
-        <div class="card mb-8 rounded-6 shadow-sm">
-          <div class="card-header py-3">
-            <h4 class="my-0 fw-normal">Pro</h4>
-          </div>
-          <div class="card-body">
-            <h1 class="card-title pricing-card-title">$15<small class="text-muted fw-light">/mo</small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>20 users included</li>
-              <li>10 GB of storage</li>
-              <li>Priority email support</li>
-              <li>Help center access</li>
-            </ul>
-            <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
-          </div>
-        </div>
-    </div>
-  </div>
+<?php   
+}
+?>
   </main>
     
     <!-- Optional JavaScript; choose one of the two! -->

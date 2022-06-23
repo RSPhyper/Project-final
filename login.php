@@ -7,7 +7,7 @@
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
+    $result = mysqli_query($conn, "SELECT * FROM loginuser WHERE username = '$username'");
 
     // cek username
     if (mysqli_num_rows($result) === 1) {
@@ -29,9 +29,8 @@
     <link rel="stylesheet" href="asset/css/nav.css">
     <link rel="stylesheet" href="asset/css/area.css">
     <link rel="stylesheet" href="asset/css/stylefot.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="img/distro.png">
     <title>Distro IT</title>
     <script src="asset/js/popup.js"></script>

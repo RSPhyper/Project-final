@@ -1,6 +1,6 @@
 <?php
 // koneksi database agar bisa di akses
-$conn =  mysqli_connect("localhost", "root", "", "databasetugas1");
+$conn =  mysqli_connect("localhost", "root", "", "project-final");
 
 // query
 function query($query)
