@@ -25,6 +25,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="asset/css/bootstrap-responsive.css" rel="stylesheet">
     <link rel="stylesheet" href="asset/css/log.css">
     <link rel="stylesheet" href="asset/css/nav.css">
     <link rel="stylesheet" href="asset/css/area.css">
