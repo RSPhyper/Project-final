@@ -30,7 +30,7 @@
             <a class="nav-link active" aria-current="page" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="produkkami.php">produk kami</a>
+            <a class="nav-link" href="#">produk kami</a>
             </li>
             <li class="nav-item">
             <a class="nav-link" href="#">keranjang</a>
@@ -56,7 +56,7 @@
     </nav>
 
     <!-- slide content -->
-
+<!-- 
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -82,7 +82,7 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
-</div> </br>
+</div> </br> -->
 
   <!-- content -->
   <main>
