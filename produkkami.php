@@ -119,8 +119,8 @@
             <img src="<?php echo $data['br_gbr']; ?>" alt="">
           <h1 class="card-title pricing-card-title"><?php echo number_format($data['br_hrg'],2,",",".");?><small class="text-muted fw-light"></small></h1>
             <div>
-              <a href="detailproduk.php?kd=<?php echo $data['br_id'];?>" class="btn btn-lg btn-danger">Detail</a> 
-              <a href="detailproduk.php?kd=<?php echo $data['br_id'];?>" class="btn btn-lg btn-success">Beli &raquo;</a>
+              <a href="detailprok.php?kd=<?php echo $data['br_id'];?>" class="btn btn-lg btn-danger">Detail</a> 
+              <a href="detailprok.php?kd=<?php echo $data['br_id'];?>" class="btn btn-lg btn-success">Beli &raquo;</a>
             </div>
           </div>
           </br>

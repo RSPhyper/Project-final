@@ -123,7 +123,7 @@
     //mysql_select_db($database_conn, $conn);
     if (isset($_SESSION['items'])) {
         foreach ($_SESSION['items'] as $key => $val) {
-            $query = mysqli_query($koneksi, "select * from barang where br_id = '$key'");
+            $query = mysqli_query($conn, "select * from barang where br_id = '$key'");
             $data = mysqli_fetch_array($query);
 
             $jumlah_harga = $data['br_hrg'] * $val;
