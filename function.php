@@ -36,7 +36,7 @@ function hapus($id)
 {
     global $conn;
     mysqli_query($conn, "DELETE FROM artikel WHERE id=$id");
-    mysqli_query($conn, "DELETE FROM user WHERE id=$id");
+    mysqli_query($conn, "DELETE FROM loginuser WHERE id=$id");
     return mysqli_affected_rows($conn);
 }
 
@@ -64,7 +64,7 @@ function registrasi($data)
 
     // mengcek terlebih dahulu username yang dibuat sudah terdaftar atau belum
 
-    $result = mysqli_query($conn, "SELECT username from user where username = '$username'");
+    $result = mysqli_query($conn, "SELECT username from loginuser where username = '$username'");
 
     if (mysqli_fetch_assoc($result)) {
         echo " 
@@ -87,7 +87,7 @@ function registrasi($data)
     // var_dump($password);
 
     // masukan data ke databases
-    $query = "INSERT INTO user
+    $query = "INSERT INTO loginuser
                  VALUES (NULL, '$username','$password')";
 
     mysqli_query($conn, $query);

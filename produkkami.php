@@ -30,17 +30,17 @@
             <a class="nav-link active" aria-current="page" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="#">produk kami</a>
+            <a class="nav-link" href="produkkami.php">produk kami</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="#">keranjang</a>
+            <a class="nav-link" href="keranjang.php">keranjang</a>
             </li>
             <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                Login
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Log out</a></li>
+                <li><a class="dropdown-item" href="logout.php">Log out</a></li>
                 <li><a class="dropdown-item" href="#">Admin</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -54,6 +54,24 @@
         </div>
     </div>
     </nav>
+
+    	<!-- start: Page Title -->
+	<div id="page-title">
+
+<div id="page-title-inner">
+
+  <!-- start: Container -->
+  <div class="container">
+
+    <h2><i class="ico-usd ico-white"></i>Produk kami</h2>
+
+  </div>
+  <!-- end: Container  -->
+
+</div>	
+
+</div>
+<!-- end: Page Title -->
 
     <!-- slide content -->
 <!-- 

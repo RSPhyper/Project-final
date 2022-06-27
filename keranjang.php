@@ -1,25 +1,48 @@
-<?php
-
-  require 'function.php';
-
-?>
-
-<!doctype html>
+<?php require_once("function.php");
+    if (!isset($_SESSION)) {
+        session_start();
+    } ?>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap CSS -->
-    <!-- <link href="asset/css/bootstrap-responsive.css" rel="stylesheet"> -->
+<head>
+	<!-- start: Meta -->
+	<meta charset="utf-8">
+	<title>DistroIT | Distro Online telengkap dan terpercaya di cikarang</title> 
+	<meta name="description" content="Distro, cikarang, terlengkap, information, technology, jababeka, baru, murah"/>
+	<meta name="keywords" content="Kaos, Murah, Cikarang, Baru, terlengkap, harga, terjangkau" />
+	<meta name="author" content="Łukasz Holeczek from creativeLabs"/>
+	<!-- end: Meta -->
+	
+	<!-- start: Mobile Specific -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- end: Mobile Specific -->
+	
+	<!-- start: Facebook Open Graph -->
+	<meta property="og:title" content=""/>
+	<meta property="og:description" content=""/>
+	<meta property="og:type" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:image" content=""/>
+	<!-- end: Facebook Open Graph -->
+
+    <!-- start: CSS --> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="icon" href="JPG/orang.png">
-    <title>Distro IT</title>
-  </head>
-  <body>
 
-<!-- navbar -->
+	<!-- end: CSS -->
 
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+    
+	<!--start: Header -->
+	<header>
+	
+	</header>
+	<!--end: Header-->
+	
     <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.php"><img src="img/distro.png" width="150px"></a>
@@ -57,72 +80,93 @@
     </div>
     </nav>
 
-    
+	<!-- start: Page Title -->
+	<div id="page-title">
 
-    <!-- slide content -->
+		<div id="page-title-inner">
 
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="img/disk.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="img/slide2.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="img/slide3.png" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div> </br>
+			<!-- start: Container -->
+			<div class="container">
 
-  <!-- content -->
-  <main>
-  <div class="container">
-  <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-  <?php
-    $sql = mysqli_query($conn, "SELECT * FROM barang ORDER BY br_id DESC limit 9");
-    while($data = mysqli_fetch_array($sql)){
-  ?>
-  <div class="col">
-        <div class="card mb-8 rounded-6 shadow-sm">
-          <div class="card-header py-3">
-            <h4 class="my-0 fw-normal"><?php echo $data['br_nm']; ?></h4>
-          </div>
-          <div class="card-body-center">
-            <img src="<?php echo $data['br_gbr']; ?>" alt="">
-          <h1 class="card-title pricing-card-title"><?php echo number_format($data['br_hrg'],2,",",".");?><small class="text-muted fw-light"></small></h1>
-            <div>
-              <a href="detailproduk.php?kd=<?php echo $data['br_id'];?>" class="btn btn-lg btn-danger">Detail</a> 
-              <a href="detailproduk.php?kd=<?php echo $data['br_id'];?>" class="btn btn-lg btn-success">Beli &raquo;</a>
-            </div>
-          </div>
-          </br>
-        </div>
-      </br>
-    </div>
-    <?php   
-      }
-    ?>
-    </div>
-    </div>
-  </main>
+				<h2><i class="ico-usd ico-white"></i>Keranjang</h2>
 
-  <!-- footer -->
+			</div>
+			<!-- end: Container  -->
 
-  <div class="b-example-divider"></div>
+		</div>	
+
+	</div>
+	<!-- end: Page Title -->
+	
+	<!--start: Wrapper-->
+	<div id="wrapper">
+				
+		<!-- start: Container -->
+		<div class="container">
+
+			<!-- start: Table -->
+            <div class="title"><h3>Detail Keranjang Belanja</h3></div>
+<table class="table table-hover table-condensed">
+<tr>
+					<th><center>No Pembelian</center></th>
+                    <th><center>Kode Barang</center></th>
+					<th><center>Nama Barang</center></th>
+					<th><center>Jumlah</center></th>
+					<th><center>Harga Satuan</center></th>
+					<th><center>Sub Total</center></th>
+					<th><center>Opsi</center></th>
+				</tr>
+			    <?php
+				//MENAMPILKAN DETAIL KERANJANG BELANJA//
+                
+    $total = 0;
+    //mysql_select_db($database_conn, $conn);
+    if (isset($_SESSION['items'])) {
+        foreach ($_SESSION['items'] as $key => $val) {
+            $query = mysqli_query($koneksi, "select * from barang where br_id = '$key'");
+            $data = mysqli_fetch_array($query);
+
+            $jumlah_harga = $data['br_hrg'] * $val;
+            $total += $jumlah_harga;
+            $no = 1;
+            ?>
+                <tr>
+                <td><center><?php echo $no++; ?></center></td>
+                <td><center><?php echo $data['br_id']; ?></center></td>
+                <td><center><?php echo $data['br_nm']; ?></center></td>
+                <td><center><?php echo number_format($data['br_hrg']); ?></center></td>
+                <td><center><?php echo number_format($val); ?></center></td>
+                <td><center><?php echo number_format($jumlah_harga); ?></center></td>
+                <td><center><a href="cart.php?act=plus&amp;barang_id=<?php echo $key; ?>&amp;ref=detail.php" class="btn btn-xs btn-success">Tambah</a> <a href="cart.php?act=min&amp;barang_id=<?php echo $key; ?>&amp;ref=detail.php" class="btn btn-xs btn-warning">Kurang</a> <a href="cart.php?act=del&amp;barang_id=<?php echo $key; ?>&amp;ref=detail.php" class="btn btn-xs btn-danger">Hapus</a></center></td>
+                </tr>
+                
+					<?php
+                    //mysql_free_result($query);			
+						}
+							//$total += $sub;
+						}?>  
+                         <?php
+				if($total == 0){
+					echo '<tr><td colspan="5" align="center">Ups, Keranjang kosong!</td></tr></table>';
+					echo '<p><div align="right">
+						<a href="index.php" class="btn btn-info btn-lg">&laquo; Continue Shopping</a>
+						</div></p>';
+				} else {
+					echo '
+						<tr style="background-color: #DDD;"><td colspan="4" align="right"><b>Total :</b></td><td align="right"><b>Rp. '.number_format($total,2,",",".").'</b></td></td></td><td></td></tr></table>
+						<p><div align="right">
+						<a href="index.php" class="btn btn-info">&laquo; CONTINUE SHOPPING</a>
+						<a href="checkout.php?total='.$total.'" class="btn btn-success"><i class="glyphicon glyphicon-shopping-cart icon-white"></i> CHECK OUT &raquo;</a>
+						</div></p>
+					';
+				}
+				?>
+
+</table>
+
+<!-- footer -->
+
+<div class="b-example-divider"></div>
 
 
 <div class="container">
@@ -186,16 +230,11 @@
 </div>
 
 <!-- end footer -->
+			
+<!-- start: Java Script -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- end: Java Script -->
 
-  
-    
-    <!-- Optional JavaScript; choose one of the two! -->
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    -->
-  </body>
+</body>
 </html>
