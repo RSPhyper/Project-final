@@ -1,5 +1,5 @@
 <?php
-
+    // session_start();
     require 'function.php';
 
     if (isset($_POST["login"])) {
@@ -14,6 +14,7 @@
         // cek password
         $row = mysqli_fetch_assoc($result);
         if (password_verify($password, $row["password"])) {
+            // $_SESSION['auth'];
             header("Location:index.php");
             exit;
         }
@@ -54,6 +55,8 @@
         </div>
         <div class="but-sign-in">
             <button class="but-login" onclick="openForm()" >Login</button>
+            <br>
+            <button class="guest-account"><a href="guest.php">Guest</a></button>
         </div>
     </div>
     <div class="body">

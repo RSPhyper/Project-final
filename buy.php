@@ -87,7 +87,7 @@
 			<!-- start: Container -->
 			<div class="container">
 
-				<h2><i class="ico-stats ico-white"></i>Detail Produk</h2>
+				<h2><i class="ico-stats ico-white"></i>Pembelian</h2>
 
 			</div>
 			<!-- end: Container  -->
@@ -102,7 +102,58 @@
 				
 		<!--start: Container -->
     	<div class="container">              
+<div class="title"><h3>Keranjang Anda</h3></div>
+            <div class="hero-unit">
+            <!--<div class="tittle"><h3><strong><span class="glyphicon glyphicon-shopping-cart"></span> Your Cart</strong></h3></div>-->
+                    <table class="table table-hover table-condensed">
+                    <tr>
+                    <th><center>No</center></th>
+					<th><center>Item</center></th>
+					<th><center>Quantity</center></th>
+					<th><center>Sub Total</center></th>
+				</tr>
+                    <?php
+				//MENAMPILKAN DETAIL KERANJANG BELANJA//
+                
+    $total = 0;
+    //mysql_select_db($database_conn, $conn);
+    if (isset($_SESSION['items'])) {
+        foreach ($_SESSION['items'] as $key => $val) {
+            $query = mysqli_query($conn, "SELECT br_id, br_nm, br_hrg FROM barang WHERE br_id = '$key'");
+            $data = mysqli_fetch_array($query);
 
+            $jumlah_harga = $data['br_hrg'] * $val;
+            $total += $jumlah_harga;
+            $no = 1;
+            ?>
+                <tr>
+                <td><center><?php echo $no ++; ?></center></td>
+                <td><center><?php echo $data['br_nm']; ?></center></td>
+                <td><center><?php echo number_format($val); ?> Pcs</center></td>
+                <td><center>Rp. <?php echo number_format($jumlah_harga); ?></center></td>
+                </tr>
+                
+					<?php
+                    //mysql_free_result($query);			
+						}
+							//$total += $sub;
+						}?>
+                        <?php
+				if($total == 0){ ?>
+					<td colspan="4" align="center"><?php echo "Keranjang Kosong!"; ?></td>
+				<?php } else { ?>
+					
+                        <td colspan="4" style="font-size: 18px;"><b><div class="pull-right">Total Belanja Anda : Rp. <?php echo number_format($total); ?>,- </div> </b></td>
+					
+			<?php	}
+				?>
+                </table> 
+                <p><div align="right">
+						<a href="keranjang.php" class="btn btn-success">&raquo Details Keranjang &laquo</a>
+						</div></p>
+            </div>
+      		<!-- start: Row -->
+            
       		<div class="row">
             <div class="col-sm-6">
                     <?php                  
@@ -147,6 +198,16 @@ $data  = mysqli_fetch_array($query);
                         <td><h3>:</h3></td>
                         <td><div><h3><?php echo $data['ket']; ?></h3></div></td>
                         </tr>
+					<!--	<p>
+						
+						</p> -->
+                        <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+						<td><div class="clear"> <a href="cart.php?act=add&amp;barang_id=<?php echo $data['br_id']; ?>&amp;ref=buy.php?kd=<?php echo $data['br_id'];?>" class="btn btn-lg btn-danger">Beli &raquo;</a></div></td>
+                        </tr>
+     
                     </table>
                     </div>
                     <!--</div> -->

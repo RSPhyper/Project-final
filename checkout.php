@@ -1,411 +1,271 @@
-<?php require_once("cart.php"); ?>
-<!DOCTYPE html>
+<?php
+require_once('function.php')
+?>
+<!doctype html>
 <html lang="en">
-<head>
-	<!-- start: Meta -->
-	<meta charset="utf-8">
-	<title>DistroIT | Distro Online telengkap dan terpercaya di cikarang</title> 
-	<meta name="description" content="Distro, cikarang, terlengkap, information, technology, jababeka, baru, murah"/>
-	<meta name="keywords" content="Kaos, Murah, Cikarang, Baru, terlengkap, harga, terjangkau" />
-	<meta name="author" content="Hakko Bio Richard"/>
-	<!-- end: Meta -->
-	
-	<!-- start: Mobile Specific -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<!-- end: Mobile Specific -->
-	
-	<!-- start: Facebook Open Graph -->
-	<meta property="og:title" content=""/>
-	<meta property="og:description" content=""/>
-	<meta property="og:type" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:image" content=""/>
-	<!-- end: Facebook Open Graph -->
-
-    <!-- start: CSS --> 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	<!-- end: CSS -->
-
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-</head>
-<body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.98.0">
+    <title>Checkout example · Bootstrap v5.2</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
     
-	<!--start: Header -->
-	<header>
-		
-		<!--start: Container -->
-	<div class="container">
-			
-			<!--start: Row -->
-			<div class="row">
-					
-				<!--start: Logo -->
-				<div class="logo span3">
-						
-					<a class="brand" href="#"><img src="img/logo2.png" alt="Logo"></a>
-						
-				</div>
-				<!--end: Logo -->
-					
-				<!--start: Navigation -->
-				<div class="span9">
-					
-					<div class="navbar navbar-inverse">
-			    		<div class="navbar-inner">
-			          		<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-			            		<span class="icon-bar"></span>
-			            		<span class="icon-bar"></span>
-			            		<span class="icon-bar"></span>
-			          		</a>
-			          		<div class="nav-collapse collapse">
-			            		<ul class="nav">
-			              			<li class="active"><a href="index.php">Home</a></li>
-			              			<li><a href="produk.php">Produk Kami</a></li>
-									<li><a href="testimoni.php">Testimoni</a></li>
-                                    <li><a href="detail.php">Keranjang</a></li>
-			              			<li class="dropdown">
-			                			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
-			                			<ul class="dropdown-menu">
-			                  				<li><a href="index.html">Admin</a></li>
-			                  				<li><a href="index.php">Konsumen</a></li>
-			                  				<!--<li class="divider"></li>
-			                  				<li class="nav-header">Nav header</li>
-			                  				<li><a href="#">Separated link</a></li>
-			                  				<li><a href="#">One more separated link</a></li>-->
-			                			</ul>
-			              			</li>
-			            		</ul>
-			          		</div>
-			        	</div>
-			      	</div>
-					
-				</div>	
-				<!--end: Navigation -->
-					
-			</div>
-			<!--end: Row -->
-			
-		</div>
-		<!--end: Container-->			
-			
-	</header>
-	<!--end: Header-->
-	
-	<!-- start: Page Title -->
-	<div id="page-title">
+<div class="container">
+  <main>
+    <div class="py-5 text-center">
+      <img class="d-block mx-auto mb-4" src="img/distro.png" alt="" width="430" height="200">
+      <h2>Checkout</h2>
+    </div>
 
-		<div id="page-title-inner">
+    <div class="row g-5">
+      <div class="col-md-5 col-lg-4 order-md-last">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-primary">Your cart</span>
+          <span class="badge bg-primary rounded-pill">3</span>
+        </h4>
 
-			<!-- start: Container -->
-			<div class="container">
+            <div class="title"><h3>Detail Keranjang Belanja</h3></div>
+  <table class="table table-hover table-condensed"> 
+  <tr>
+					<th><center>No Pembelian</center></th>
+                    <th><center>Kode Barang</center></th>
+					<th><center>Nama Barang</center></th>
+					<th><center>Jumlah</center></th>
+					<th><center>Harga Satuan</center></th>
+					<th><center>Sub Total</center></th>
+					<th><center>Opsi</center></th>
+				</tr>
+			    <?php
+				//MENAMPILKAN DETAIL KERANJANG BELANJA//
+                
+    $total = 0;
+    //mysql_select_db($database_conn, $conn);
+    if (isset($_SESSION['items'])) {
+        foreach ($_SESSION['items'] as $key => $val) {
+            $query = mysqli_query($conn, "select * from barang where br_id = '$key'");
+            $data = mysqli_fetch_array($query);
 
-				<h2><i class="ico-usd ico-white"></i>Checkout Keranjang</h2>
+            $jumlah_harga = $data['br_hrg'] * $val;
+            $total += $jumlah_harga;
+            $no = 1;
+            ?>
+                <tr>
+                <td><center><?php echo $no++; ?></center></td>
+                <td><center><?php echo $data['br_id']; ?></center></td>
+                <td><center><?php echo $data['br_nm']; ?></center></td>
+                <td><center><?php echo number_format($data['br_hrg']); ?></center></td>
+                <td><center><?php echo number_format($val); ?></center></td>
+                <td><center><?php echo number_format($jumlah_harga); ?></center></td>
+                <td><center><a href="cart.php?act=plus&amp;barang_id=<?php echo $key; ?>&amp;ref=keranjang.php" class="btn btn-xs btn-success">Tambah</a> <a href="cart.php?act=min&amp;barang_id=<?php echo $key; ?>&amp;ref=keranjang.php" class="btn btn-xs btn-warning">Kurang</a> <a href="cart.php?act=del&amp;barang_id=<?php echo $key; ?>&amp;ref=keranjang.php" class="btn btn-xs btn-danger">Hapus</a></center></td>
+                </tr>
+                
+					<?php
+                    //mysql_free_result($query);			
+						}
+							//$total += $sub;
+						}?>  
+                         <?php
+				if($total == 0){
+					echo '<tr><td colspan="5" align="center">Ups, Keranjang kosong!</td></tr></table>';
+					echo '<p><div align="right">
+						<a href="index.php" class="btn btn-info btn-lg">&laquo; Continue Shopping</a>
+						</div></p>';
+				} else {
+					echo '
+						<tr style="background-color: #DDD;"><td colspan="4" align="right"><b>Total :</b></td><td align="right"><b>Rp. '.number_format($total,2,",",".").'</b></td></td></td><td></td></tr></table>
+						<p><div align="right">
+						<a href="index.php" class="btn btn-info">&laquo; CONTINUE SHOPPING</a>
+						<a href="checkout.php?total='.$total.'" class="btn btn-success"><i class="glyphicon glyphicon-shopping-cart icon-white"></i> CHECK OUT &raquo;</a>
+						</div></p>
+					';
+				}
+				?>
 
-			</div>
-			<!-- end: Container  -->
+</table>
 
-		</div>	
+        <form class="card p-2">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Promo code">
+            <button type="submit" class="btn btn-secondary">Redeem</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">Billing address</h4>
+        <form class="needs-validation" novalidate>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">First name</label>
+              <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Valid first name is required.
+              </div>
+            </div>
 
-	</div>
-	<!-- end: Page Title -->
-	
-	<!--start: Wrapper-->
-	<div id="wrapper">
-				
-		<!-- start: Container -->
-		<div class="container">
+            <div class="col-sm-6">
+              <label for="lastName" class="form-label">Last name</label>
+              <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Valid last name is required.
+              </div>
+            </div>
 
-			<!-- start: Table -->
-                 <div class="table-responsive">
-                 <div class="title"><h3>Form Checkout</h3></div>
-                 <div class="hero-unit">Harap isi form dibawah ini dengan lengkap dan benar sesuai idenditas anda!</div>
-                <div class="hero-unit">Total Belanja Anda Rp. <?php echo abs((int)$_GET['total']); ?>,-</div> 
-    <form id="formku" action="selesai.php" method="post">
-    <table class="table table-condensed">
-    <input type="hidden" name="total" value="<?php echo abs((int)$_GET['total']); ?>">
-    <tr>
-        <td><label for="nm_usr">Nama</label></td>
-        <td><input name="nm_usr" type="text" class="required" minlength="6" id="nm_usr" size="200" /></td>
-      </tr>
-      <tr>
-        <td><label for="log_usr">Username</label></td>
-        <td><input name="log_usr" type="text" class="required" minlength="6" id="log_usr" /></td>
-      </tr>
-      <tr>
-        <td><label for="pas_usr">Password</label></td>
-        <td><input name="pas_usr" type="password" class="required" minlength="6" id="pas_usr" /></td>
-      </tr>
-      <tr>
-        <td><label for="email_usr">Email</label></td>
-        <td><input name="email_usr" type="text" class="email required" id="email_usr" /></td>
-      </tr>
-      <tr>
-        <td><label for="almt_usr">Alamat</label></td>
-        <td><input name="almt_usr" type="text" class="required" id="almt_usr" /></td>
-      </tr>
-      <tr>
-        <td><label for="kp_usr">Kode Pos</label></td>
-        <td><input name="kp_usr" type="text" class="required number" minlength="5" maxlength="5" id="kp_usr" /></td>
-      </tr>
-      <tr>
-        <td><label for="kota_usr">Kota</label></td>
-        <td><input name="kota_usr" type="text" class="required" minlength="6" id="kota_usr" /></td>
-      </tr>
-      <tr>
-        <td><label for="tlp">No telepon</label></td>
-        <td><input name="tlp" type="text" class="required number" minlength="12" id="tlp" /></td>
-      </tr>
-      <tr>
-        <td><label for="rek">No Rekening</label></td>
-        <td><input name="rek" type="text" class="required number" minlength="12" id="rek" /></td>
-      </tr>
-      <tr>
-        <td><label for="nmrek">Nama Rekening</label></td>
-        <td><input name="nmrek" type="text" class="required" minlength="6" id="nmrek" /></td>
-      </tr>
-      <tr>
-        <td><label for="bank">Bank</label></td>
-        <td><select name="bank" class="required">
-        <option></option>
-        <option value="Mandiri">Mandiri</option>
-        <option value="BNI">BNI</option>
-        <option value="CIMB">CIMB</option>
-        <option value="BCA">BCA</option>
-        <option value="Bank Jabar">Bank Jabar</option>
-        <option value="Danamon">Danamon</option>
-        <option value="BRI">BRI</option>
-        <option value="Permata">Permata</option>
-        </select>
-        </td>
-      </tr>
-      <tr>
-      <td></td>
-        <td><input type="submit" value="Simpan Data" name="finish"  class="btn btn-sm btn-primary"/>&nbsp;<a href="index.php" class="btn btn-sm btn-primary">Kembali</a></td>
-        </tr>
-    </table>
-    </form>
-                   </div>
-				
-			<!-- end: Table -->
+            <div class="col-12">
+              <label for="username" class="form-label">Username</label>
+              <div class="input-group has-validation">
+                <span class="input-group-text">@</span>
+                <input type="text" class="form-control" id="username" placeholder="Username" required>
+              <div class="invalid-feedback">
+                  Your username is required.
+                </div>
+              </div>
+            </div>
 
-		</div>
-		<!-- end: Container -->
-				
-	</div>
-	<!-- end: Wrapper  -->			
+            <div class="col-12">
+              <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
+              <input type="email" class="form-control" id="email" placeholder="you@example.com">
+              <div class="invalid-feedback">
+                Please enter a valid email address for shipping updates.
+              </div>
+            </div>
 
-    <!-- start: Footer Menu -->
-	<div id="footer-menu" class="hidden-tablet hidden-phone">
+            <div class="col-12">
+              <label for="address" class="form-label">Address</label>
+              <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+              <div class="invalid-feedback">
+                Please enter your shipping address.
+              </div>
+            </div>
 
-		<!-- start: Container -->
-		<div class="container">
-			
-			<!-- start: Row -->
-			<div class="row">
+            <div class="col-12">
+              <label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
+              <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+            </div>
 
-				<!-- start: Footer Menu Logo -->
-				<div class="span2">
-					<div id="footer-menu-logo">
-						<a href="#"><img src="img/logo-footer-menu.png" alt="logo" /></a>
-					</div>
-				</div>
-				<!-- end: Footer Menu Logo -->
+            <div class="col-md-5">
+              <label for="country" class="form-label">Country</label>
+              <select class="form-select" id="country" required>
+                <option value="">Choose...</option>
+                <option>United States</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid country.
+              </div>
+            </div>
 
-				<!-- start: Footer Menu Links-->
-				<div class="span9">
-					
-					<div id="footer-menu-links">
+            <div class="col-md-4">
+              <label for="state" class="form-label">State</label>
+              <select class="form-select" id="state" required>
+                <option value="">Choose...</option>
+                <option>California</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid state.
+              </div>
+            </div>
 
-						<ul id="footer-nav">
+            <div class="col-md-3">
+              <label for="zip" class="form-label">Zip</label>
+              <input type="text" class="form-control" id="zip" placeholder="" required>
+              <div class="invalid-feedback">
+                Zip code required.
+              </div>
+            </div>
+          </div>
 
-							<li><a href="#">Kemeja</a></li>
+          <hr class="my-4">
 
-							<li><a href="#">Kaos</a></li>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="same-address">
+            <label class="form-check-label" for="same-address">Shipping address is the same as my billing address</label>
+          </div>
 
-							<li><a href="#">Sweater</a></li>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="save-info">
+            <label class="form-check-label" for="save-info">Save this information for next time</label>
+          </div>
 
-							<li><a href="#">Jacket</a></li>
-							
-							<li><a href="#">Pants & Jeans</a></li>
+          <hr class="my-4">
 
-						</ul>
+          <h4 class="mb-3">Payment</h4>
 
-					</div>
-					
-				</div>
-				<!-- end: Footer Menu Links-->
+          <div class="my-3">
+            <div class="form-check">
+              <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+              <label class="form-check-label" for="credit">Credit card</label>
+            </div>
+            <div class="form-check">
+              <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+              <label class="form-check-label" for="debit">Debit card</label>
+            </div>
+            <div class="form-check">
+              <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+              <label class="form-check-label" for="paypal">PayPal</label>
+            </div>
+          </div>
 
-				<!-- start: Footer Menu Back To Top -->
-				<div class="span1">
-						
-					<div id="footer-menu-back-to-top">
-						<a href="#"></a>
-					</div>
-				
-				</div>
-				<!-- end: Footer Menu Back To Top -->
-			
-			</div>
-			<!-- end: Row -->
-			
-		</div>
-		<!-- end: Container  -->	
+          <div class="row gy-3">
+            <div class="col-md-6">
+              <label for="cc-name" class="form-label">Name on card</label>
+              <input type="text" class="form-control" id="cc-name" placeholder="" required>
+              <small class="text-muted">Full name as displayed on card</small>
+              <div class="invalid-feedback">
+                Name on card is required
+              </div>
+            </div>
 
-	</div>	
-	<!-- end: Footer Menu -->
+            <div class="col-md-6">
+              <label for="cc-number" class="form-label">Credit card number</label>
+              <input type="text" class="form-control" id="cc-number" placeholder="" required>
+              <div class="invalid-feedback">
+                Credit card number is required
+              </div>
+            </div>
 
-	<!-- start: Footer -->
-	<div id="footer">
-		
-		<!-- start: Container -->
-		<div class="container">
-			
-			<!-- start: Row -->
-			<div class="row">
+            <div class="col-md-3">
+              <label for="cc-expiration" class="form-label">Expiration</label>
+              <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+              <div class="invalid-feedback">
+                Expiration date required
+              </div>
+            </div>
 
-				<!-- start: About -->
-				<div class="span3">
-					
-					<h3>Tentang DistroIT</h3>
-					<p>
-						DistroIT adalah toko online yang bergerak di bidang fasion, sasaran kami semua kalangan baik muda maupun tua, mulai dari anak - anak dan orang dewasa.
-					</p>
-						
-				</div>
-				<!-- end: About -->
+            <div class="col-md-3">
+              <label for="cc-cvv" class="form-label">CVV</label>
+              <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+              <div class="invalid-feedback">
+                Security code required
+              </div>
+            </div>
+          </div>
 
-				<!-- start: Photo Stream -->
-				<div class="span3">
-					
-					<h3>Alamat Kami</h3>
-					Kp. Wangkal Rt.03 Rw.07 Desa Kalijaya Kecamatan Cikarang Utara Kabupaten Bekasi 17530<br />
-                    Telp : 085694984803<br />
-                    Email : <a href="mailto:hakko_bio_richard@yahoo.co.id">hakko_bio_richard@yahoo.co.id</a> / <a href="mailto:hakkobiorichard@gmail.com">hakkobiorichard@gmail.com</a>
-				</div>
-				<!-- end: Photo Stream -->
+          <hr class="my-4">
 
-				<div class="span6">
-				
-					<!-- start: Follow Us -->
-					<h3>Follow Us!</h3>
-					<ul class="social-grid">
-						<li>
-							<div class="social-item">				
-								<div class="social-info-wrap">
-									<div class="social-info">
-										<div class="social-info-front social-twitter">
-											<a href="http://twitter.com"></a>
-										</div>
-										<div class="social-info-back social-twitter-hover">
-											<a href="http://twitter.com"></a>
-										</div>	
-									</div>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="social-item">				
-								<div class="social-info-wrap">
-									<div class="social-info">
-										<div class="social-info-front social-facebook">
-											<a href="http://facebook.com"></a>
-										</div>
-										<div class="social-info-back social-facebook-hover">
-											<a href="http://facebook.com"></a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="social-item">				
-								<div class="social-info-wrap">
-									<div class="social-info">
-										<div class="social-info-front social-dribbble">
-											<a href="http://dribbble.com"></a>
-										</div>
-										<div class="social-info-back social-dribbble-hover">
-											<a href="http://dribbble.com"></a>
-										</div>	
-									</div>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="social-item">				
-								<div class="social-info-wrap">
-									<div class="social-info">
-										<div class="social-info-front social-flickr">
-											<a href="http://flickr.com"></a>
-										</div>
-										<div class="social-info-back social-flickr-hover">
-											<a href="http://flickr.com"></a>
-										</div>	
-									</div>
-								</div>
-							</div>
-						</li>
-					</ul>
-					<!-- end: Follow Us -->
-				
-					<!-- start: Newsletter -->
-				<!--	<form id="newsletter">
-						<h3>Newsletter</h3>
-						<p>Please leave us your email</p>
-						<label for="newsletter_input">@:</label>
-						<input type="text" id="newsletter_input"/>
-						<input type="submit" id="newsletter_submit" value="submit">
-					</form> -->
-					<!-- end: Newsletter -->
-				
-				</div>
-				
-			</div>
-			<!-- end: Row -->	
-			
-		</div>
-		<!-- end: Container  -->
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+        </form>
+      </div>
+    </div>
+  </main>
 
-	</div>
-	<!-- end: Footer -->
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2017–2022 Company Name</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
+</div>
 
-	<!-- start: Copyright -->
-	<div id="copyright">
-	
-		<!-- start: Container -->
-		<div class="container">
-		
-			<p>
-				Copyright &copy; <a href="http://www.niqoweb.com">DistroIT 2015</a> <a href="http://bootstrapmaster.com" alt="Bootstrap Themes">Bootstrap Themes</a> designed by BootstrapMaster
-			</p>
-	
-		</div>
-		<!-- end: Container  -->
-		
-	</div>	
-	<!-- end: Copyright -->
 
-<!-- start: Java Script -->
-<!-- Placed at the end of the document so the pages load faster -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-<script src="jquery.validate.js"></script>
-    <script>
-    $(document).ready(function(){
-        $("#formku").validate();
-    });
-    </script> 
-    
-    <style type="text/css">
-    label.error {
-        color: red;
-        padding-left: .5em;
-    }
-    </style>
-<!-- end: Java Script -->
-
-</body>
+      <script src="form-validation.js"></script>
+  </body>
 </html>

@@ -1,5 +1,10 @@
 <?php
+  // session_start();
   require 'function.php';
+  // if(!isset($_SESSION['auth'])){
+  //   header("Location: login.php");
+  // }
+
 ?>
 
 <!doctype html>
@@ -11,7 +16,7 @@
     <!-- Bootstrap CSS -->
     <!-- <link href="asset/css/bootstrap-responsive.css" rel="stylesheet"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="icon" href="JPG/orang.png">
+    <link rel="icon" href="img/distro.png">
     <title>Distro IT</title>
   </head>
   <body>
@@ -33,17 +38,7 @@
             <a class="nav-link" href="produkkami.php">produk kami</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="keranjang.php">keranjang</a>
-            </li>
-            <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-               Login
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="logout.php">Log out</a></li>
-                <li><a class="dropdown-item" href="admin.php">Admin</a></li>
-                <li><hr class="dropdown-divider"></li>
-            </ul>
+            <a class="nav-link" href="login.php">log in</a>
             </li>
         </ul>
         <form class="d-flex" role="search">
@@ -54,26 +49,10 @@
     </div>
     </nav>
 
-    	<!-- start: Page Title -->
-	<div id="page-title">
-
-<div id="page-title-inner">
-
-  <!-- start: Container -->
-  <div class="container">
-
-    <h2><i class="ico-usd ico-white"></i>Produk kami</h2>
-
-  </div>
-  <!-- end: Container  -->
-
-</div>	
-
-</div>
-<!-- end: Page Title -->
+    
 
     <!-- slide content -->
-<!-- 
+
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -99,7 +78,7 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
-</div> </br> -->
+</div> </br>
 
   <!-- content -->
   <main>
@@ -119,7 +98,6 @@
           <h1 class="card-title pricing-card-title"><?php echo number_format($data['br_hrg'],2,",",".");?><small class="text-muted fw-light"></small></h1>
             <div>
               <a href="detailprok.php?kd=<?php echo $data['br_id'];?>" class="btn btn-lg btn-danger">Detail</a> 
-              <a href="buy.php?kd=<?php echo $data['br_id'];?>" class="btn btn-lg btn-success">Beli &raquo;</a>
             </div>
           </div>
           </br>
@@ -197,6 +175,8 @@
     </div>
   </footer>
 </div>
+
+<!-- end footer -->
 
   
     

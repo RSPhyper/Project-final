@@ -1,6 +1,9 @@
 <?php
-
+  // session_start();
   require 'function.php';
+  // if(!isset($_SESSION['auth'])){
+  //   header("Location: login.php");
+  // }
 
 ?>
 
@@ -13,7 +16,7 @@
     <!-- Bootstrap CSS -->
     <!-- <link href="asset/css/bootstrap-responsive.css" rel="stylesheet"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="icon" href="JPG/orang.png">
+    <link rel="icon" href="img/distro.png">
     <title>Distro IT</title>
   </head>
   <body>
@@ -43,9 +46,8 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="logout.php">Log out</a></li>
-                <li><a class="dropdown-item" href="#">Admin</a></li>
+                <li><a class="dropdown-item" href="admin.php">Admin</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
             </li>
         </ul>
@@ -106,7 +108,7 @@
           <h1 class="card-title pricing-card-title"><?php echo number_format($data['br_hrg'],2,",",".");?><small class="text-muted fw-light"></small></h1>
             <div>
               <a href="detailprok.php?kd=<?php echo $data['br_id'];?>" class="btn btn-lg btn-danger">Detail</a> 
-              <a href="detailprok.php?kd=<?php echo $data['br_id'];?>" class="btn btn-lg btn-success">Beli &raquo;</a>
+              <a href="buy.php?kd=<?php echo $data['br_id'];?>" class="btn btn-lg btn-success">Beli &raquo;</a>
             </div>
           </div>
           </br>

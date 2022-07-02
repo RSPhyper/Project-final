@@ -66,9 +66,8 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="logout.php">Log out</a></li>
-                <li><a class="dropdown-item" href="#">Admin</a></li>
+                <li><a class="dropdown-item" href="admin.php">Admin</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
             </li>
         </ul>
@@ -137,7 +136,7 @@
                 <td><center><?php echo number_format($data['br_hrg']); ?></center></td>
                 <td><center><?php echo number_format($val); ?></center></td>
                 <td><center><?php echo number_format($jumlah_harga); ?></center></td>
-                <td><center><a href="cart.php?act=plus&amp;barang_id=<?php echo $key; ?>&amp;ref=detail.php" class="btn btn-xs btn-success">Tambah</a> <a href="cart.php?act=min&amp;barang_id=<?php echo $key; ?>&amp;ref=detail.php" class="btn btn-xs btn-warning">Kurang</a> <a href="cart.php?act=del&amp;barang_id=<?php echo $key; ?>&amp;ref=detail.php" class="btn btn-xs btn-danger">Hapus</a></center></td>
+                <td><center><a href="cart.php?act=plus&amp;barang_id=<?php echo $key; ?>&amp;ref=keranjang.php" class="btn btn-xs btn-success">Tambah</a> <a href="cart.php?act=min&amp;barang_id=<?php echo $key; ?>&amp;ref=keranjang.php" class="btn btn-xs btn-warning">Kurang</a> <a href="cart.php?act=del&amp;barang_id=<?php echo $key; ?>&amp;ref=keranjang.php" class="btn btn-xs btn-danger">Hapus</a></center></td>
                 </tr>
                 
 					<?php

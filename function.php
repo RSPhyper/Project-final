@@ -15,46 +15,6 @@ function query($query)
     return $rows;
 }
 
-// tambah data
-function tambah($data)
-{
-    global $conn;
-    $caption = htmlspecialchars($data["caption"]);
-  
-
-    $query = "INSERT INTO artikel
-                VALUES
-                 (NULL, '$caption')";
-
-    mysqli_query($conn, $query);
-    // memngcek apakah data berhasil dimodifikasi atau tidak
-    return mysqli_affected_rows($conn);
-}
-
-// menghapus data
-function hapus($id)
-{
-    global $conn;
-    mysqli_query($conn, "DELETE FROM artikel WHERE id=$id");
-    mysqli_query($conn, "DELETE FROM loginuser WHERE id=$id");
-    return mysqli_affected_rows($conn);
-}
-
-// mengupdate data
-function ubah($data)
-{
-    global $conn;
-    $id = $data["id"];
-    $caption = htmlspecialchars($_POST["caption"]);
-
-    $query = "UPDATE artikel SET
-    caption = '$caption'
-    WHERE id = '$id'";
-
-    mysqli_query($conn, $query);
-    return mysqli_affected_rows($conn);
-}
-
 function registrasi($data)
 {
     global $conn;
@@ -93,3 +53,4 @@ function registrasi($data)
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
 }
+?>
