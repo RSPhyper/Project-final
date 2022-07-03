@@ -63,7 +63,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="logout.php">Log out</a></li>
-                <li><a class="dropdown-item" href="admin.php">Admin</a></li>
+                <li><a class="dropdown-item" href="logadmin.php">Admin</a></li>
                 <li><hr class="dropdown-divider"></li>
             </ul>
             </li>
@@ -165,7 +165,7 @@ $data  = mysqli_fetch_array($query);
                     <div class="hero-unit" style="margin-left: 20px;">
                     <table>
                     <tr>
-                        <td rowspan="7"><img src="<?php echo $data['br_gbr']; ?>" /></td>
+                        <td rowspan="7"><img src="img/barang/<?php echo $data['br_gbr']; ?>" alt=""></td>
                         </tr>
                         <tr>
                         <td colspan="4"><div class="title"><h3><?php echo $data['br_nm']; ?></h3></div></td>

@@ -25,17 +25,14 @@
 
     <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.php"><img src="img/distro.png" width="150px"></a>
+        <a class="navbar-brand" href="guest.php"><img src="img/distro.png" width="150px"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="produkkami.php">produk kami</a>
+            <a class="nav-link active" aria-current="page" href="guest.php">Home</a>
             </li>
             <li class="nav-item">
             <a class="nav-link" href="login.php">log in</a>
@@ -94,10 +91,10 @@
             <h4 class="my-0 fw-normal"><?php echo $data['br_nm']; ?></h4>
           </div>
           <div class="card-body-center">
-            <img src="<?php echo $data['br_gbr']; ?>" alt="">
+            <img src="img/barang/<?php echo $data['br_gbr']; ?>" alt="">
           <h1 class="card-title pricing-card-title"><?php echo number_format($data['br_hrg'],2,",",".");?><small class="text-muted fw-light"></small></h1>
             <div>
-              <a href="detailprok.php?kd=<?php echo $data['br_id'];?>" class="btn btn-lg btn-danger">Detail</a> 
+              <a href="detailguest.php?kd=<?php echo $data['br_id'];?>" class="btn btn-lg btn-danger">Detail</a> 
             </div>
           </div>
           </br>

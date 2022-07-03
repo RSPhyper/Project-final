@@ -41,7 +41,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="logout.php">Log out</a></li>
-                <li><a class="dropdown-item" href="admin.php">Admin</a></li>
+                <li><a class="dropdown-item" href="logadmin.php">Admin</a></li>
                 <li><hr class="dropdown-divider"></li>
             </ul>
             </li>

@@ -46,7 +46,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="logout.php">Log out</a></li>
-                <li><a class="dropdown-item" href="admin.php">Admin</a></li>
+                <li><a class="dropdown-item" href="logadmin.php">Admin</a></li>
                 <li><hr class="dropdown-divider"></li>
             </ul>
             </li>
@@ -104,7 +104,7 @@
             <h4 class="my-0 fw-normal"><?php echo $data['br_nm']; ?></h4>
           </div>
           <div class="card-body-center">
-            <img src="<?php echo $data['br_gbr']; ?>" alt="">
+            <img src="img/barang/<?php echo $data['br_gbr']; ?>" alt="">
           <h1 class="card-title pricing-card-title"><?php echo number_format($data['br_hrg'],2,",",".");?><small class="text-muted fw-light"></small></h1>
             <div>
               <a href="detailprok.php?kd=<?php echo $data['br_id'];?>" class="btn btn-lg btn-danger">Detail</a> 
