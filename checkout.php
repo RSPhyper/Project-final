@@ -1,6 +1,7 @@
 <?php
 require_once('function.php')
 ?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -70,7 +71,9 @@ require_once('function.php')
 						}
 							//$total += $sub;
 						}?>  
-                         <?php
+
+        
+          <?php
 				if($total == 0){
 					echo '<tr><td colspan="5" align="center">Ups, Keranjang kosong!</td></tr></table>';
 					echo '<p><div align="right">

@@ -28,7 +28,7 @@
             </a>
             <div class="text-end">
               <button type="button" class="btn btn-outline-light me-2">Admin</button>
-              <a href="create.php"><button type="button" class="btn btn-primary">Create</button></a>
+              <a href="tambahbarang.php"><button type="button" class="btn btn-primary">Create</button></a>
             </div>
           </div>
         </div>
@@ -40,8 +40,8 @@
     <!-- content -->
     
         <div class="container">
-            <h1 class="text-center">Kelompok 1 </h1>
-            <h2 class="text-center">Daftar nama</h2>
+            <h1 class="text-center">Kelompok 7 </h1>
+            <h2 class="text-center">Daftar Barang</h2>
             <br>
             <table class="table table-white table-hover table-bordered border border-danger ">
                 <tr class="table table-dark">
@@ -54,6 +54,7 @@
                     <td>gambar Barang</td>
                     <td>Keterangan</td>
                     <td>Status</td>
+                    <td>pilih</td>
                 </tr>
     
                 <?php
@@ -73,10 +74,11 @@
                     <td><?= $data['br_stok'];?></td>
                     <td><?= $data['br_satuan'];?></td>
                     <td>
-                      <img src="<?= $data['br_gbr'];?>" alt="" class="img-fluid" width="100px" height="100px">
+                      <img src="img/barang/<?= $data['br_gbr'];?>" alt="" class="img-fluid" width="100px" height="100px">
                     </td>
                     <td><?= $data['ket'];?></td>
                     <td><?= $data['br_sts'];?></td>
+                    <td><a href="delete.php?br_id=<?= $data['br_id']?>"><button type="button" class="btn btn-danger">Delete</button></a></td>
                 </tr>
     
                 <?php

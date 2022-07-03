@@ -53,9 +53,10 @@
             <a>Log in</a>
             </h1>
         </div>
+        
         <div class="but-sign-in">
             <button class="but-login" onclick="openForm()" >Login</button>
-            <br>
+</br></br>
             <button class="guest-account"><a href="guest.php">Guest</a></button>
         </div>
     </div>
