@@ -1,6 +1,7 @@
-<?php
-require_once('function.php')
-?>
+<?php require_once("function.php");
+    if (!isset($_SESSION)) {
+        session_start();
+    } ?>
 
 <!doctype html>
 <html lang="en">
@@ -27,20 +28,17 @@ require_once('function.php')
     <div class="row g-5">
       <div class="col-md-5 col-lg-4 order-md-last">
         <h4 class="d-flex justify-content-between align-items-center mb-3">
-          <span class="text-primary">Your cart</span>
-          <span class="badge bg-primary rounded-pill">3</span>
         </h4>
 
             <div class="title"><h3>Detail Keranjang Belanja</h3></div>
   <table class="table table-hover table-condensed"> 
   <tr>
 					<th><center>No Pembelian</center></th>
-                    <th><center>Kode Barang</center></th>
+          <th><center>Kode Barang</center></th>
 					<th><center>Nama Barang</center></th>
 					<th><center>Jumlah</center></th>
 					<th><center>Harga Satuan</center></th>
 					<th><center>Sub Total</center></th>
-					<th><center>Opsi</center></th>
 				</tr>
 			    <?php
 				//MENAMPILKAN DETAIL KERANJANG BELANJA//
@@ -63,7 +61,6 @@ require_once('function.php')
                 <td><center><?php echo number_format($data['br_hrg']); ?></center></td>
                 <td><center><?php echo number_format($val); ?></center></td>
                 <td><center><?php echo number_format($jumlah_harga); ?></center></td>
-                <td><center><a href="cart.php?act=plus&amp;barang_id=<?php echo $key; ?>&amp;ref=keranjang.php" class="btn btn-xs btn-success">Tambah</a> <a href="cart.php?act=min&amp;barang_id=<?php echo $key; ?>&amp;ref=keranjang.php" class="btn btn-xs btn-warning">Kurang</a> <a href="cart.php?act=del&amp;barang_id=<?php echo $key; ?>&amp;ref=keranjang.php" class="btn btn-xs btn-danger">Hapus</a></center></td>
                 </tr>
                 
 					<?php
@@ -81,10 +78,10 @@ require_once('function.php')
 						</div></p>';
 				} else {
 					echo '
-						<tr style="background-color: #DDD;"><td colspan="4" align="right"><b>Total :</b></td><td align="right"><b>Rp. '.number_format($total,2,",",".").'</b></td></td></td><td></td></tr></table>
+						<tr style="background-color: #DDD;"><td colspan="4"><b>Total :</b></td><td align="right"><b>Rp.'.number_format($total,2,",",".").'</b></td></td></td><td></td></tr></table>
 						<p><div align="right">
-						<a href="index.php" class="btn btn-info">&laquo; CONTINUE SHOPPING</a>
-						<a href="checkout.php?total='.$total.'" class="btn btn-success"><i class="glyphicon glyphicon-shopping-cart icon-white"></i> CHECK OUT &raquo;</a>
+						<a href="keranjang.php" class="btn btn-info">&laquo; KEMBALI</a>
+						<a href="checkout.php?total='.$total.'"></a>
 						</div></p>
 					';
 				}
